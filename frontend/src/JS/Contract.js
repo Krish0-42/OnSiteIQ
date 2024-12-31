@@ -221,7 +221,7 @@ const Contract = () => {
                     <h1>Construction Project Details</h1>
                     <div style={{marginLeft: '80px'}}>
                             <label style={{color: 'white', fontWeight: 'bold',fontSize: '20px'}}>Contract/Site ID </label>
-                            <input type="text" name="CollectionName" style={{border: '2px solid white', color: 'black', fontWeight: 'bold',fontSize: '20px',color: 'white'}} 
+                            <input type="text" name="CollectionName" style={{border: '2px solid white', color: 'black', fontWeight: 'bold',fontSize: '20px'}} 
                             value={formData.CollectionName} onChange={handleInputChange} required 
                             placeholder='Enter Contract/Site ID'/>
                     </div>
