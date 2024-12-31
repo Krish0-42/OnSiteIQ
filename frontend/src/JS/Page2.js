@@ -15,7 +15,7 @@ function Page2() {
     e.preventDefault();
   
     try {
-      const response = await fetch("http://localhost:5000/api/delete-worker", {
+      const response = await fetch("backend-uri/api/delete-worker", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

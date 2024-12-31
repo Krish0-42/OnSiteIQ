@@ -11,7 +11,7 @@ function EstimationDownload() {
   useEffect(() => {
     const fetchBasicInfo = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/basic-info");
+        const response = await fetch("backend-uri/api/basic-info");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -29,7 +29,7 @@ function EstimationDownload() {
 
   const handleDownload = async (projectName) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/generate-pdf?projectName=${projectName}`);
+      const response = await fetch(`backend-uri/api/generate-pdf?projectName=${projectName}`);
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }

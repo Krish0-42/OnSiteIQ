@@ -27,7 +27,7 @@ const Modal = ({ show, onClose }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/workers", {
+      const response = await fetch("backend-uri/api/workers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -129,7 +129,7 @@ function Members() {
 
   const fetchWorkers = async (role = "") => {
     try {
-      const response = await fetch(`http://localhost:5000/api/workers/filter?role=${role}`);
+      const response = await fetch(`backend-uri/api/workers/filter?role=${role}`);
       const data = await response.json();
 
       if (Array.isArray(data)) {

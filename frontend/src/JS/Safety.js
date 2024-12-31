@@ -52,7 +52,7 @@ function Safety() {
   useEffect(() => {
     const fetchPPEData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/get-ppe"); // Replace with your backend URL
+        const response = await fetch("backend-uri/get-ppe"); // Replace with your backend URL
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -126,7 +126,7 @@ function Safety() {
     alert("Please wait for a few seconds");
   
     // API request to update the value
-    const response = await fetch(`http://localhost:5000/ppe/${editingField}`, {
+    const response = await fetch(`backend-uri/ppe/${editingField}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

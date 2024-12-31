@@ -7,7 +7,7 @@ const RadialChart = () => {
 
   // Fetch data from API and process it
   useEffect(() => {
-    fetch('http://localhost:5000/api/workers')
+    fetch('backend-uri/api/workers')
       .then((response) => response.json())
       .then((fetchedData) => {
         // Aggregate roles into counts

@@ -40,7 +40,7 @@ const Alert = () => {
         form.append('image', formData.image);
     
         try {
-          const response = await fetch('http://localhost:3000/api/alerts', {
+          const response = await fetch('backend-uri/api/alerts', {
             method: 'POST',
             body: form,
           });

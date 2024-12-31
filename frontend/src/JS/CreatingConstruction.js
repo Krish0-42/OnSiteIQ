@@ -32,7 +32,7 @@ function CreatingConstruction() {
   useEffect(() => {
     const fetchSiteData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/sites");
+        const response = await axios.get("backend-uri/api/sites");
         setSiteData(response.data);
         console.log("API Response:", response.data);
       } catch (error) {
@@ -105,7 +105,7 @@ function CreatingConstruction() {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/sites/${selectedSiteID}`);
+      const response = await axios.delete(`backend-uri/api/sites/${selectedSiteID}`);
       console.log(response.data.message);
 
       // Remove the deleted site from the UI
