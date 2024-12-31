@@ -14,7 +14,7 @@ const { app: imageApp } = require('./image');
 const { mongodb: mongoDB } = require('./Server');
 
 // Run the server on port 8080 
-const PORT = 8080; 
+const PORT = process.env.PORT || 8080; 
 imageApp.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
