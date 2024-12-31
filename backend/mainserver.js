@@ -24,15 +24,15 @@ const runPythonServer = () => {
     const pythonProcess = spawn('python', ['api_server.py']); // Ensure python is available in your PATH
     
     pythonProcess.stdout.on('data', (data) => {
-        console.log(`Python Server Output: ${data}`);
+        // console.log(`Python Server Output: ${data}`);
     });
 
     pythonProcess.stderr.on('data', (data) => {
-        console.error(`Python Server Error: ${data}`);
+        // console.error(`Python Server Error: ${data}`);
     });
 
     pythonProcess.on('close', (code) => {
-        console.log(`Python process exited with code ${code}`);
+        // console.log(`Python process exited with code ${code}`);
     });
 };
 
