@@ -8,7 +8,7 @@ function AlertHistory() {
   const [alertHistory, setAlertHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null); // State to store the selected image for overlay
-  const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+  const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

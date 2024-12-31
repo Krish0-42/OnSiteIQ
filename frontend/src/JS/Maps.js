@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 // npm install react-leaflet-geosearch : for locator
 // npm install leaflet react-leaflet
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

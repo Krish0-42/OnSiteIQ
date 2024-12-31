@@ -10,7 +10,7 @@ import blacktextlogo from "../Images/blacktextlogo.png";
 import html2pdf from 'html2pdf.js/dist/html2pdf.min.js';
 import { FaDownload } from "react-icons/fa";
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

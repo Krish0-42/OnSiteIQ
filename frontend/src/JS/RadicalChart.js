@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

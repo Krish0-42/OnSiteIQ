@@ -4,7 +4,7 @@ import { IoPersonAddOutline } from "react-icons/io5";
 import Structure from "./Structure";
 import img1 from "../Images/worker.png";
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

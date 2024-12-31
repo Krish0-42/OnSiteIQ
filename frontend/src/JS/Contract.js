@@ -3,7 +3,7 @@ import '../CSS/Contract.css';
 import Structure from './Structure';
 import { FaBuilding, FaFileContract, FaClipboardList, FaMapMarkerAlt, FaShieldAlt, FaTools, FaUsers, FaMoneyBillWave, FaLeaf } from 'react-icons/fa';
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

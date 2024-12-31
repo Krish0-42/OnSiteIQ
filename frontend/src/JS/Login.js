@@ -4,7 +4,7 @@ import "../CSS/Login.css";
 import logo from "../Images/Main-Logo.png";
 import screenvideo from "../Images/LoginVideo.mp4";
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

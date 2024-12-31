@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Structure from "./Structure";
 import '../CSS/RegisterValidation.css';
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

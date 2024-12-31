@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../CSS/ContractDownloadPdf.css";
 import Structure from "./Structure";
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

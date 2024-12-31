@@ -15,7 +15,7 @@ import html2pdf from 'html2pdf.js/dist/html2pdf.min.js';
 import { Chart as ChartJS, registerables } from 'chart.js';
 ChartJS.register(...registerables); // Register all necessary components for Chart.js
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 

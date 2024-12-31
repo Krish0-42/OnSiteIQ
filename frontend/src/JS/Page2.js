@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../CSS/Page2.css';
 import bg from '../Images/passwordimg4.jpg';
 
-const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+const BACKEND_URI = process.env. || 'http://localhost:3000';
 
 
 
