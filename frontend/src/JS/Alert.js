@@ -4,7 +4,7 @@ import Structure from './Structure';
 import { useNavigate } from "react-router-dom";
 import '../CSS/Alert.css';
 
-const BACKEND_URI = process.env. || 'http://localhost:3000';
+const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
 
 
 

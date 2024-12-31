@@ -7,7 +7,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import blacktextlogo from "../Images/blacktextlogo.png";
 import { useNavigate } from "react-router-dom";
 
-const BACKEND_URI = process.env. || 'http://localhost:3000';
+const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
 
 
 

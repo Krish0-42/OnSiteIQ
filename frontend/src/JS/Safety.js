@@ -17,7 +17,7 @@ import gloves1 from "../Images/gloves1.jpg";
 import ppeimage from "../Images/ppeimage.jpg";
 import lastcategoryimage from "../Images/last-category-image.png";
 
-const BACKEND_URI = process.env. || 'http://localhost:3000';
+const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
 
 
 

@@ -8,7 +8,7 @@ import Structure from "./Structure";
 import { FaLocationDot } from "react-icons/fa6";
 import blacktextlogo from "../Images/blacktextlogo.png";
 
-const BACKEND_URI = process.env. || 'http://localhost:3000';
+const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
 
 
 
