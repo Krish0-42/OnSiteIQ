@@ -176,7 +176,7 @@ function Maps() {
     
         if (window.confirm("Are you sure you want to delete this marker?")) {
             try {
-                const response = await fetch(`http://localhost:3000/api/delete-map-data/${markerId}`, {
+                const response = await fetch(`${backend_uri}/api/delete-map-data/${markerId}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',

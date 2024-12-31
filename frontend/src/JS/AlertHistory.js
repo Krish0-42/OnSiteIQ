@@ -62,7 +62,7 @@ function AlertHistory() {
                 </div>
                 {alert.image && (
                   <div className="image-container">
-                    <button className="view-image-button" onClick={() => handleImageClick(`http://localhost:3000${alert.image}`)}>
+                    <button className="view-image-button" onClick={() => handleImageClick(`${backend_uri}${alert.image}`)}>
                       View Image
                     </button>
                   </div>

@@ -78,7 +78,7 @@ function CreatingConstruction() {
     formData.append("contractFile", contractFile);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/sites", formData, {
+      const response = await axios.post(`${backend_uri}/api/sites`, formData, {
         headers: {
           "Content-Type": "multipart/form-data", // Required for file uploads
         },
