@@ -7,10 +7,6 @@ import { FaLocationDot } from "react-icons/fa6";
 import blacktextlogo from "../Images/blacktextlogo.png";
 import { useNavigate } from "react-router-dom";
 
-const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
-
-
-
 function CreatingConstruction() {
   // Site creation:
   const [createSiteOpenModel, setcreateSiteOpenModel] = useState(false);
@@ -36,7 +32,7 @@ function CreatingConstruction() {
   useEffect(() => {
     const fetchSiteData = async () => {
       try {
-        const response = await axios.get(`${BACKEND_URI}/api/sites`);
+        const response = await axios.get("https://onsiteiq-server.onrender.com/api/sites");
         setSiteData(response.data);
         console.log("API Response:", response.data);
       } catch (error) {
@@ -80,7 +76,7 @@ function CreatingConstruction() {
     formData.append("contractFile", contractFile);
 
     try {
-      const response = await axios.post(`${BACKEND_URI}/api/sites`, formData, {
+      const response = await axios.post("https://onsiteiq-image-server.onrender.com/api/sites", formData, {
         headers: {
           "Content-Type": "multipart/form-data", // Required for file uploads
         },
@@ -109,7 +105,7 @@ function CreatingConstruction() {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`${BACKEND_URI}/api/sites/${selectedSiteID}`);
+      const response = await axios.delete(`https://onsiteiq-server.onrender.com/api/sites/${selectedSiteID}`);
       console.log(response.data.message);
 
       // Remove the deleted site from the UI

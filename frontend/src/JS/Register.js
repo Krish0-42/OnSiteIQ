@@ -4,10 +4,6 @@ import logo from "../Images/Main-Logo.png";
 import screenvideo from "../Images/LoginVideo.mp4";
 import { useNavigate } from "react-router-dom"; // Import useNavigate at the top
 
-const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
-
-
-
 function Register() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -53,7 +49,7 @@ function Register() {
     setLoading(true);
     try {
       // Step 1: Fetch the registered emails from the server
-      const registeredEmailsResponse = await fetch(`${BACKEND_URI}/get-registered-emails`);
+      const registeredEmailsResponse = await fetch("https://onsiteiq-server.onrender.com/get-registered-emails");
       const registeredEmailsData = await registeredEmailsResponse.json();
   
       // Step 2: Check if the response is successful and if the email is in the registered list
@@ -71,7 +67,7 @@ function Register() {
       }
   
       // Step 4: Store the registration attempt before sending OTP
-      const storeResponse = await fetch(`${BACKEND_URI}/store-registration-attempt`, {
+      const storeResponse = await fetch("https://onsiteiq-server.onrender.com/store-registration-attempt", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -85,7 +81,7 @@ function Register() {
       }
   
       // Step 5: Call the send-otp API
-      const otpResponse = await fetch(`${BACKEND_URI}/send-otp`, {
+      const otpResponse = await fetch("https://onsiteiq-server.onrender.com/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -117,7 +113,7 @@ function Register() {
     const otpString = otp.join(""); // Join array elements into a string
     setLoading(true);
     try {
-      const response = await fetch(`${BACKEND_URI}/verify-otp`, {
+      const response = await fetch("https://onsiteiq-server.onrender.com/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp: otpString }),

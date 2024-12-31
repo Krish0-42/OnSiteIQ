@@ -4,10 +4,6 @@ import Structure from './Structure';
 import { useNavigate } from "react-router-dom";
 import '../CSS/Alert.css';
 
-const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
-
-
-
 const Alert = () => {
     const [formData, setFormData] = useState({
         workerName: '',
@@ -41,10 +37,10 @@ const Alert = () => {
         form.append('workerName', formData.workerName);
         form.append('siteLocation', formData.siteLocation);
         form.append('description', formData.description);
-        form.append('image', formData.image);    
+        form.append('image', formData.image);
     
         try {
-          const response = await fetch(`${BACKEND_URI}/api/alerts`, {
+          const response = await fetch('https://onsiteiq-image-server.onrender.com/api/alerts', {
             method: 'POST',
             body: form,
           });

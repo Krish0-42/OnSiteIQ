@@ -332,7 +332,7 @@ console.log("EMAIL_PASSWORD:", process.env.EMAIL_PASSWORD);
               <li><strong>Password:</strong> ${password}</li>
             </ul>
             <p>
-              <a href="http://localhost:3000/login" style="padding: 10px 20px; color: white; background-color: blue; text-decoration: none; border-radius: 5px;">
+              <a href="https://onsiteiq-image-server.onrender.com/login" style="padding: 10px 20px; color: white; background-color: blue; text-decoration: none; border-radius: 5px;">
                 Login to Your Account
               </a>
             </p>

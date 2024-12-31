@@ -3,10 +3,6 @@ import '../CSS/Contract.css';
 import Structure from './Structure';
 import { FaBuilding, FaFileContract, FaClipboardList, FaMapMarkerAlt, FaShieldAlt, FaTools, FaUsers, FaMoneyBillWave, FaLeaf } from 'react-icons/fa';
 
-const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
-
-
-
 const FormSection = ({ title, icon, children }) => (
     <div className="form-section">
         <div className="section-header">
@@ -150,7 +146,7 @@ const Contract = () => {
         };
     
         try {
-            const response = await fetch(`${BACKEND_URI}/submit-project`, {
+            const response = await fetch('https://onsiteiq-server.onrender.com/submit-project', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(groupedData),
@@ -225,7 +221,7 @@ const Contract = () => {
                     <h1>Construction Project Details</h1>
                     <div style={{marginLeft: '80px'}}>
                             <label style={{color: 'white', fontWeight: 'bold',fontSize: '20px'}}>Contract/Site ID </label>
-                            <input type="text" name="CollectionName" style={{border: '2px solid white', color: 'black', fontWeight: 'bold',fontSize: '20px'}} 
+                            <input type="text" name="CollectionName" style={{border: '2px solid white', color: 'black', fontWeight: 'bold',fontSize: '20px',color: 'white'}} 
                             value={formData.CollectionName} onChange={handleInputChange} required 
                             placeholder='Enter Contract/Site ID'/>
                     </div>

@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../CSS/EstimationDownload.css";
 import Structure from './Structure';
 
-const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
-
-
-
 function EstimationDownload() {
   const [basicInfoList, setBasicInfoList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +11,7 @@ function EstimationDownload() {
   useEffect(() => {
     const fetchBasicInfo = async () => {
       try {
-        const response = await fetch(`${BACKEND_URI}/api/basic-info`);
+        const response = await fetch("https://onsiteiq-server.onrender.com/api/basic-info");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -33,7 +29,7 @@ function EstimationDownload() {
 
   const handleDownload = async (projectName) => {
     try {
-      const response = await fetch(`${BACKEND_URI}/api/generate-pdf?projectName=${projectName}`);
+      const response = await fetch(`https://onsiteiq-server.onrender.com/api/generate-pdf?projectName=${projectName}`);
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }

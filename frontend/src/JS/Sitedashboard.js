@@ -11,13 +11,10 @@ import 'react-circular-progressbar/dist/styles.css'; // Styles for CircularProgr
 import ConstructionProgressChart from "../JS/ConstructionProgressChart.js";
 import html2pdf from 'html2pdf.js/dist/html2pdf.min.js';
 
+
 // Chart.js registration
 import { Chart as ChartJS, registerables } from 'chart.js';
 ChartJS.register(...registerables); // Register all necessary components for Chart.js
-
-const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
-
-
 
 function Sitedashboard() {
     const location = useLocation();
@@ -46,7 +43,7 @@ function Sitedashboard() {
   // Site Status
   useEffect(() => {
     if (siteDetails && siteDetails.siteID) {
-      fetch(`${BACKEND_URI}/api/construction-status/${siteDetails.siteID}`)
+      fetch(`https://onsiteiq-server.onrender.com/api/construction-status/${siteDetails.siteID}`)
         .then((response) => response.json())
         .then((data) => {
           setCurrentStatus(data.constructionStatus);
@@ -58,7 +55,7 @@ function Sitedashboard() {
   // Materials Data
     useEffect(() => {
         if (siteDetails && siteDetails.siteID) {
-            fetch(`${BACKEND_URI}/api/dashboard/materials/${siteDetails.siteID}`)
+            fetch(`https://onsiteiq-server.onrender.com/api/dashboard/materials/${siteDetails.siteID}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);

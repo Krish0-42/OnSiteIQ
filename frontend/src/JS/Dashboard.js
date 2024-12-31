@@ -8,11 +8,9 @@ import RadarChart from "./RadarChart";
 import RadialChart from "./RadicalChart";
 
 
-function Dashboard() {
+function Dashboard({}) {
   // For Drop-Down
-  // eslint-disable-next-line no-unused-vars
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  // eslint-disable-next-line no-unused-vars
   const toggleDropdown = () => {
     setIsDropdownOpen((prevState) => !prevState);
   };

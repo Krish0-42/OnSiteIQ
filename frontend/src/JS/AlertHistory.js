@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/AlertHistory.css";
 import Structure from './Structure';
-import { FaExclamationTriangle } from 'react-icons/fa';
+import { FaExclamationTriangle, FaCloudUploadAlt } from 'react-icons/fa';
 
 
 function AlertHistory() {
   const [alertHistory, setAlertHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null); // State to store the selected image for overlay
-  const BACKEND_URI = process.env.BACKEND_URI || 'http://localhost:3000';
 
-
-
+  // check
+  //ghef
   // Fetch alerts when the component mounts
   useEffect(() => {
     const fetchAlertHistory = async () => {
       try {
-        const response = await fetch(`${BACKEND_URI}/api/alerts/history`);
+        const response = await fetch('https://onsiteiq-image-server.onrender.com/api/alerts/history');
         const data = await response.json();
         setAlertHistory(data);
         console.log(data);
@@ -64,7 +63,7 @@ function AlertHistory() {
                 </div>
                 {alert.image && (
                   <div className="image-container">
-                    <button className="view-image-button" onClick={() => handleImageClick(`${BACKEND_URI}${alert.image}`)}>
+                    <button className="view-image-button" onClick={() => handleImageClick(`https://onsiteiq-image-server.onrender.com${alert.image}`)}>
                       View Image
                     </button>
                   </div>
