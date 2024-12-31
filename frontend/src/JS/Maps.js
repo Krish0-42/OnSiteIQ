@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState} from "react";
 import "../CSS/Maps.css";
 import 'leaflet/dist/leaflet.css';
 import SidePanel from "./SidePanel";
@@ -6,7 +6,7 @@ import logo from "../Images/Main-Logo.png";
 import { FaSearch, FaHome, FaMapMarkerAlt, FaCheck } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents} from 'react-leaflet';
 import L from 'leaflet';
 import { useMap } from 'react-leaflet';
 import { MdEdit } from "react-icons/md";
@@ -15,6 +15,8 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // npm install react-leaflet-geosearch : for locator
 // npm install leaflet react-leaflet
+
+const backend_uri = 'https://onsiteiq.onrender.com';
 
 const customMarker = new L.Icon({
     iconUrl: mapimg,
@@ -59,7 +61,7 @@ function Maps() {
     useEffect(() => {
         const fetchMapData = async () => {
             try {
-                const response = await fetch('backend-uri/api/get-map-data');
+                const response = await fetch(`${backend_uri}/api/get-map-data`);
                 const data = await response.json();
                 setMapData(data);  // Store the API data
             } catch (error) {
@@ -144,7 +146,7 @@ function Maps() {
     
     //     if (window.confirm("Are you sure you want to delete this marker?")) {
     //         try {
-    //             const response = await fetch(`backend-uri/api/delete-map-data/${markerId}`, {
+    //             const response = await fetch(`backend_uri/api/delete-map-data/${markerId}`, {
     //                 method: 'DELETE',
     //                 headers: {
     //                     'Content-Type': 'application/json',
@@ -235,7 +237,7 @@ function Maps() {
                 longitude: formPosition[1],
             };
 
-            const response = await fetch("backend-uri/add-marker", {
+            const response = await fetch(`${backend_uri}/add-marker`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -377,10 +379,7 @@ function Maps() {
                                         justifyContent: "left",
                                         gap: "15px",
                                         backgroundColor: "rgba(24, 134, 21, 0.20)",  
-                                        borderRadius: "10px",
-                                        border: "1px solid #000000",
                                         backdropFilter: "blur(12.5px)", 
-                                        justifyContent:'left'
                                     }}
                                 >
                                     <img src={logo} style={{width:"160px",height:"60px",marginLeft:"70px"}} alt="Logo" />

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import * as d3 from "d3";
 
+const backend_uri = 'https://onsiteiq.onrender.com';
+
 const DonutChart = () => {
   const [data, setData] = useState([]);
   const chartRef = useRef(null);
@@ -8,7 +10,7 @@ const DonutChart = () => {
 
   useEffect(() => {
     // Fetch PPE data from the API
-    fetch("backend-uri/get-ppe")
+    fetch(`${backend_uri}/get-ppe`)
       .then((response) => response.json())
       .then((fetchedData) => {
         setData(fetchedData); // Set the fetched data

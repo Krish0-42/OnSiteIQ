@@ -3,12 +3,14 @@ import { useLocation } from "react-router-dom";
 import Structure from "./Structure";
 import '../CSS/RegisterValidation.css';
 
+const backend_uri = 'https://onsiteiq.onrender.com';
+
 function RegisterValidation() {
   const [attempts, setAttempts] = useState([]);
   useEffect(() => {
     const fetchAttempts = async () => {
       try {
-        const response = await fetch("backend-uri/get-registration-attempts"); // Replace with your backend URL
+        const response = await fetch(`${backend_uri}/get-registration-attempts`); // Replace with your backend URL
         const data = await response.json();
         if (data.success) {
           setAttempts(data.attempts);
@@ -25,7 +27,7 @@ function RegisterValidation() {
   const allowRegistration = async (email) => {
     const organization = "OnsiteIQ"; // Replace with the actual organization name
     try {
-      const response = await fetch("backend-uri/allow-registration", {
+      const response = await fetch(`${backend_uri}/allow-registration`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -48,7 +50,7 @@ function RegisterValidation() {
   // Deny the registration attempt
   const denyRegistration = async (email) => {
     try {
-      const response = await fetch("backend-uri/update-registration-status", {
+      const response = await fetch(`${backend_uri}/update-registration-status`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, status: "denied" }),

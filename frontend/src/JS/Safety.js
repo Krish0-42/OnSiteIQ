@@ -17,6 +17,8 @@ import gloves1 from "../Images/gloves1.jpg";
 import ppeimage from "../Images/ppeimage.jpg";
 import lastcategoryimage from "../Images/last-category-image.png";
 
+const backend_uri = 'https://onsiteiq.onrender.com';
+
 function Safety() {
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +54,7 @@ function Safety() {
   useEffect(() => {
     const fetchPPEData = async () => {
       try {
-        const response = await fetch("backend-uri/get-ppe"); // Replace with your backend URL
+        const response = await fetch(`${backend_uri}/get-ppe`); // Replace with your backend URL
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -126,7 +128,7 @@ function Safety() {
     alert("Please wait for a few seconds");
   
     // API request to update the value
-    const response = await fetch(`backend-uri/ppe/${editingField}`, {
+    const response = await fetch(`${backend_uri}/ppe/${editingField}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

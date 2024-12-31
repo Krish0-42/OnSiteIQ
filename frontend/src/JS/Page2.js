@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../CSS/Page2.css';
 import bg from '../Images/passwordimg4.jpg';
 
+const backend_uri = 'https://onsiteiq.onrender.com';
+
 function Page2() {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
@@ -15,7 +17,7 @@ function Page2() {
     e.preventDefault();
   
     try {
-      const response = await fetch("backend-uri/api/delete-worker", {
+      const response = await fetch(`${backend_uri}/api/delete-worker`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

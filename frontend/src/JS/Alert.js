@@ -38,9 +38,10 @@ const Alert = () => {
         form.append('siteLocation', formData.siteLocation);
         form.append('description', formData.description);
         form.append('image', formData.image);
+        const backend_uri = 'https://onsiteiq.onrender.com';
     
         try {
-          const response = await fetch('backend-uri/api/alerts', {
+          const response = await fetch(`${backend_uri}/api/alerts`, {
             method: 'POST',
             body: form,
           });

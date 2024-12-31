@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../CSS/ContractDownloadPdf.css";
 import Structure from "./Structure";
 
+const backend_uri = 'https://onsiteiq.onrender.com';
+
 function ContractDownloadPdf() {
     const [collections, setCollections] = useState([]);
 
@@ -9,7 +11,7 @@ function ContractDownloadPdf() {
     useEffect(() => {
         const fetchCollections = async () => {
             try {
-                const response = await fetch('backend-uri/api/collections');
+                const response = await fetch(`${backend_uri}/api/collections`);
                 const data = await response.json();
                 setCollections(data);
             } catch (error) {
@@ -22,7 +24,7 @@ function ContractDownloadPdf() {
 
     // Function to handle contract download (placeholder functionality)
     const handleDownload = async (collectionName) => {
-        const response = await fetch(`backend-uri/api/generate-pdf/${collectionName}`, {
+        const response = await fetch(`${backend_uri}/api/generate-pdf/${collectionName}`, {
             method: "GET",
         });
     

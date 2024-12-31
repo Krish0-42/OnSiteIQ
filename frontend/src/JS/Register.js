@@ -4,6 +4,8 @@ import logo from "../Images/Main-Logo.png";
 import screenvideo from "../Images/LoginVideo.mp4";
 import { useNavigate } from "react-router-dom"; // Import useNavigate at the top
 
+const backend_uri = 'https://onsiteiq.onrender.com';
+
 function Register() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -49,7 +51,7 @@ function Register() {
     setLoading(true);
     try {
       // Step 1: Fetch the registered emails from the server
-      const registeredEmailsResponse = await fetch("backend-uri/get-registered-emails");
+      const registeredEmailsResponse = await fetch(`${backend_uri}/get-registered-emails`);
       const registeredEmailsData = await registeredEmailsResponse.json();
   
       // Step 2: Check if the response is successful and if the email is in the registered list
@@ -67,7 +69,7 @@ function Register() {
       }
   
       // Step 4: Store the registration attempt before sending OTP
-      const storeResponse = await fetch("backend-uri/store-registration-attempt", {
+      const storeResponse = await fetch(`${backend_uri}/store-registration-attempt`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -81,7 +83,7 @@ function Register() {
       }
   
       // Step 5: Call the send-otp API
-      const otpResponse = await fetch("backend-uri/send-otp", {
+      const otpResponse = await fetch(`${backend_uri}/send-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -113,7 +115,7 @@ function Register() {
     const otpString = otp.join(""); // Join array elements into a string
     setLoading(true);
     try {
-      const response = await fetch("backend-uri/verify-otp", {
+      const response = await fetch(`${backend_uri}/verify-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp: otpString }),

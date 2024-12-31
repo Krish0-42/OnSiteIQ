@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../CSS/Members.css";
-import { FaSearch } from "react-icons/fa";
 import { IoPersonAddOutline } from "react-icons/io5";
 import Structure from "./Structure";
 import img1 from "../Images/worker.png";
+
+const backend_uri = 'https://onsiteiq.onrender.com';
 
 // Modal Component
 const Modal = ({ show, onClose }) => {
@@ -27,7 +28,7 @@ const Modal = ({ show, onClose }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("backend-uri/api/workers", {
+      const response = await fetch(`${backend_uri}/api/workers`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -129,7 +130,7 @@ function Members() {
 
   const fetchWorkers = async (role = "") => {
     try {
-      const response = await fetch(`backend-uri/api/workers/filter?role=${role}`);
+      const response = await fetch(`${backend_uri}/api/workers/filter?role=${role}`);
       const data = await response.json();
 
       if (Array.isArray(data)) {

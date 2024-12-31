@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 
+const backend_uri = 'https://onsiteiq.onrender.com';
+
 const RadialChart = () => {
   const chartRef = useRef(null);
   const [data, setData] = useState([]);
 
   // Fetch data from API and process it
   useEffect(() => {
-    fetch('backend-uri/api/workers')
+    fetch(`${backend_uri}/api/workers`)
       .then((response) => response.json())
       .then((fetchedData) => {
         // Aggregate roles into counts
