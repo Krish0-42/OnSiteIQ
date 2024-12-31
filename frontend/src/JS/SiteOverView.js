@@ -10,7 +10,9 @@ import blacktextlogo from "../Images/blacktextlogo.png";
 import html2pdf from 'html2pdf.js/dist/html2pdf.min.js';
 import { FaDownload } from "react-icons/fa";
 
-const backend_uri = 'https://onsiteiq.onrender.com';
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
 function SiteOverView() {
     const location = useLocation();
@@ -22,7 +24,7 @@ function SiteOverView() {
   useEffect(() => {
     if (siteDetails?.siteID) {
       console.log("Fetching data for siteID:", siteDetails.siteID);
-      fetch(`${backend_uri}/api/site-data/${siteDetails.siteID}`)
+      fetch(`${BACKEND_URI}/api/site-data/${siteDetails.siteID}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

@@ -15,7 +15,9 @@ import html2pdf from 'html2pdf.js/dist/html2pdf.min.js';
 import { Chart as ChartJS, registerables } from 'chart.js';
 ChartJS.register(...registerables); // Register all necessary components for Chart.js
 
-const backend_uri = 'https://onsiteiq.onrender.com';
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
 function Sitedashboard() {
     const location = useLocation();
@@ -44,7 +46,7 @@ function Sitedashboard() {
   // Site Status
   useEffect(() => {
     if (siteDetails && siteDetails.siteID) {
-      fetch(`${backend_uri}/api/construction-status/${siteDetails.siteID}`)
+      fetch(`${BACKEND_URI}/api/construction-status/${siteDetails.siteID}`)
         .then((response) => response.json())
         .then((data) => {
           setCurrentStatus(data.constructionStatus);
@@ -56,7 +58,7 @@ function Sitedashboard() {
   // Materials Data
     useEffect(() => {
         if (siteDetails && siteDetails.siteID) {
-            fetch(`${backend_uri}/api/dashboard/materials/${siteDetails.siteID}`)
+            fetch(`${BACKEND_URI}/api/dashboard/materials/${siteDetails.siteID}`)
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);

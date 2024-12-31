@@ -8,7 +8,9 @@ import Structure from "./Structure";
 import { FaLocationDot } from "react-icons/fa6";
 import blacktextlogo from "../Images/blacktextlogo.png";
 
-const backend_uri = 'https://onsiteiq.onrender.com';
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
 function Progress() {
   // For Drop-Down
@@ -57,7 +59,7 @@ function Progress() {
   
       try {
         // Make API call to update the construction status using fetch
-        const response = await fetch(`${backend_uri}/update-construction-status/${collectionName}`, {
+        const response = await fetch(`${BACKEND_URI}/update-construction-status/${collectionName}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

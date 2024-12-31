@@ -8,13 +8,15 @@ function AlertHistory() {
   const [alertHistory, setAlertHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null); // State to store the selected image for overlay
-  const backend_uri = 'https://onsiteiq.onrender.com';
+  const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
   // Fetch alerts when the component mounts
   useEffect(() => {
     const fetchAlertHistory = async () => {
       try {
-        const response = await fetch(`${backend_uri}/api/alerts/history`);
+        const response = await fetch(`${BACKEND_URI}/api/alerts/history`);
         const data = await response.json();
         setAlertHistory(data);
         console.log(data);
@@ -62,7 +64,7 @@ function AlertHistory() {
                 </div>
                 {alert.image && (
                   <div className="image-container">
-                    <button className="view-image-button" onClick={() => handleImageClick(`${backend_uri}${alert.image}`)}>
+                    <button className="view-image-button" onClick={() => handleImageClick(`${BACKEND_URI}${alert.image}`)}>
                       View Image
                     </button>
                   </div>

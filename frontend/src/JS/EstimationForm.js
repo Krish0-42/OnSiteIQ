@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import '../CSS/EstimationForm.css';
 import Structure from './Structure';
 
-const backend_uri = 'https://onsiteiq.onrender.com';
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
 const FormSection = ({ title, children }) => (
   <div className="form-section">
@@ -85,7 +87,7 @@ const EstimationForm = () => {
     }
   
     try {
-      const response = await fetch(`${backend_uri}/api/estimation`, {
+      const response = await fetch(`${BACKEND_URI}/api/estimation`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

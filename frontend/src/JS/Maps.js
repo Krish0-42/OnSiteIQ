@@ -16,7 +16,9 @@ import { useNavigate } from "react-router-dom";
 // npm install react-leaflet-geosearch : for locator
 // npm install leaflet react-leaflet
 
-const backend_uri = 'https://onsiteiq.onrender.com';
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
 const customMarker = new L.Icon({
     iconUrl: mapimg,
@@ -61,7 +63,7 @@ function Maps() {
     useEffect(() => {
         const fetchMapData = async () => {
             try {
-                const response = await fetch(`${backend_uri}/api/get-map-data`);
+                const response = await fetch(`${BACKEND_URI}/api/get-map-data`);
                 const data = await response.json();
                 setMapData(data);  // Store the API data
             } catch (error) {
@@ -146,7 +148,7 @@ function Maps() {
     
     //     if (window.confirm("Are you sure you want to delete this marker?")) {
     //         try {
-    //             const response = await fetch(`backend_uri/api/delete-map-data/${markerId}`, {
+    //             const response = await fetch(`BACKEND_URI/api/delete-map-data/${markerId}`, {
     //                 method: 'DELETE',
     //                 headers: {
     //                     'Content-Type': 'application/json',
@@ -176,7 +178,7 @@ function Maps() {
     
         if (window.confirm("Are you sure you want to delete this marker?")) {
             try {
-                const response = await fetch(`${backend_uri}/api/delete-map-data/${markerId}`, {
+                const response = await fetch(`${BACKEND_URI}/api/delete-map-data/${markerId}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -237,7 +239,7 @@ function Maps() {
                 longitude: formPosition[1],
             };
 
-            const response = await fetch(`${backend_uri}/add-marker`, {
+            const response = await fetch(`${BACKEND_URI}/add-marker`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

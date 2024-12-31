@@ -4,7 +4,9 @@ import "../CSS/Login.css";
 import logo from "../Images/Main-Logo.png";
 import screenvideo from "../Images/LoginVideo.mp4";
 
-const backend_uri = 'https://onsiteiq.onrender.com';
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,7 +32,7 @@ function Login() {
     }
   
     try {
-      const response = await fetch(`${backend_uri}/get-personal-login-details`);
+      const response = await fetch(`${BACKEND_URI}/get-personal-login-details`);
       const data = await response.json();
   
       if (response.ok && data.success) {
@@ -42,7 +44,7 @@ function Login() {
           return;
         }
   
-        const otpResponse = await fetch(`${backend_uri}/send-otp`, {
+        const otpResponse = await fetch(`${BACKEND_URI}/send-otp`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: forgotEmail }),
@@ -72,7 +74,7 @@ function Login() {
     }
 
     try {
-      const response = await fetch(`${backend_uri}/verify-otp`, {
+      const response = await fetch(`${BACKEND_URI}/verify-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: forgotEmail, otp }),
@@ -105,7 +107,7 @@ function Login() {
     try {
       setLoading(true);
 
-      const response = await fetch(`${backend_uri}/update-password`, {
+      const response = await fetch(`${BACKEND_URI}/update-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: forgotEmail, newPassword }),
@@ -139,7 +141,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${backend_uri}/get-login-details`);
+      const response = await fetch(`${BACKEND_URI}/get-login-details`);
       const data = await response.json();
 
       if (response.ok && data.success) {

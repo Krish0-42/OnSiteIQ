@@ -12,7 +12,9 @@ import { useLocation } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import blacktextlogo from "../Images/blacktextlogo.png";
 
-const backend_uri = 'https://onsiteiq.onrender.com';
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
 function Material() {
   const location = useLocation();
@@ -47,7 +49,7 @@ function Material() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${backend_uri}/api/materials/${siteID}`, {
+      const response = await fetch(`${BACKEND_URI}/api/materials/${siteID}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +83,7 @@ function Material() {
 
   // Fetch site details and materials on mount
   useEffect(() => {
-    fetch(`${backend_uri}/api/materials/${siteID}`)
+    fetch(`${BACKEND_URI}/api/materials/${siteID}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -138,7 +140,7 @@ function Material() {
       try {
         // Send the input value directly to the backend
         const response = await fetch(
-          `${backend_uri}/api/materials/${siteID}/${editingField}`,
+          `${BACKEND_URI}/api/materials/${siteID}/${editingField}`,
           {
             method: "PUT", // Assuming PUT is used for updates
             headers: {
@@ -198,7 +200,7 @@ function Material() {
     if (badgeEditingField !== null && badgeTempValue !== null) {
       try {
         // Send the input value directly to the backend
-        const response = await fetch(`${backend_uri}/api/materials/${siteID}/${badgeEditingField}`, {
+        const response = await fetch(`${BACKEND_URI}/api/materials/${siteID}/${badgeEditingField}`, {
           method: "PUT", // Assuming PUT is used for updates
           headers: {
             "Content-Type": "application/json",

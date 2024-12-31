@@ -3,7 +3,9 @@ import '../CSS/Contract.css';
 import Structure from './Structure';
 import { FaBuilding, FaFileContract, FaClipboardList, FaMapMarkerAlt, FaShieldAlt, FaTools, FaUsers, FaMoneyBillWave, FaLeaf } from 'react-icons/fa';
 
-const backend_uri = 'https://onsiteiq.onrender.com';
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI || 'http://localhost:3000';
+
+
 
 const FormSection = ({ title, icon, children }) => (
     <div className="form-section">
@@ -148,7 +150,7 @@ const Contract = () => {
         };
     
         try {
-            const response = await fetch(`${backend_uri}/submit-project`, {
+            const response = await fetch(`${BACKEND_URI}/submit-project`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(groupedData),
