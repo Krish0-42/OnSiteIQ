@@ -196,11 +196,6 @@ margin-top: -10px;
   margin-right: 10px;
 }
 
-  
-
-
-
-
 .safety-fallprotection-input,
 .safety-mask-input,
 .safety-earmuffs-input,
@@ -236,9 +231,6 @@ border: 2px solid rgba(190, 202, 216, 0.514);
 margin-top: 20px;
 }
 
-
-
-
 /* Editable input field */
 .safety-shoes-edit, .safety-gloves-edit, .safety-vest-edit,
 .safety-earmuffs-edit, .safety-mask-edit, .safety-safetyglasses-edit,
@@ -254,6 +246,3 @@ margin-top: 20px;
   box-sizing: border-box;
   margin-top: 25px;
 }
-
-
-

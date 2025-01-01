@@ -12,7 +12,9 @@
 /* Header Section */
 .About_us-header {
   height: 500px;
-  background: url('../Images/image18.png') center/cover;
+  background-image: url('../Images/image18.png');
+  background-position: center;
+  background-size: cover;
   position: relative;
   border-radius: 20px;
   overflow: hidden;

@@ -2,13 +2,12 @@
     /* background: linear-gradient(to right, #060606, #060332); */
     color: white;
     overscroll-behavior: none;
+}
 
-
-    .site{
-        display: flex;
-        flex-direction: column; background: linear-gradient(to right, #060606, #060332); min-height: 100%;
-        padding: 0px;
-      }
+.site{
+  display: flex;
+  flex-direction: column; background: linear-gradient(to right, #060606, #060332); min-height: 100%;
+  padding: 0px;
 }
 
  /* Main Container */

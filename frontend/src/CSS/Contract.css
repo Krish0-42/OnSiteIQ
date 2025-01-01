@@ -93,7 +93,7 @@
 }
 
 .form-group-full-width {
-    grid-column: 1 / -1;
+    grid-column: 1 / span 2;
     width: 100%;
     /* border: 2px solid red; */
 }
