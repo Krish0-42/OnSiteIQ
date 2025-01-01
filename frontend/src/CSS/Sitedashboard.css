@@ -1,6 +1,4 @@
 * {
-    /* background: linear-gradient(to right, #060606, #060332); */
-    /* color: white; */
     overscroll-behavior: none;
 }
 
@@ -12,7 +10,5 @@
 
 .sitedashnoard-main{
     margin-left: 320px;
-    /* display: flex;
-    flex-direction: row; */
 }
 

@@ -1,40 +1,23 @@
 * {
-    /* background: linear-gradient(to right, #060606, #060332); */
-    color: white;
-    overscroll-behavior: none;
-    /* border: 1px solid red; */
-    /* background: linear-gradient(to right, #060606, #060332); */
-    /* z-index: 1; */
+  color: white;
+  overscroll-behavior: none;
 }
 
-.Progress-Main{
-   background: linear-gradient(to right, #060606, #060332); 
+.Progress-Main {
+  background: linear-gradient(to right, #060606, #060332);
 }
 
 .progress-MainScreens {
-    display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    flex-direction: column;
-    background: linear-gradient(to right, #060606, #060332);
-    height:1300px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #060606, #060332);
+  height: 1300px;
 }
-  /* .sidepanel{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    margin-left: 0px;
-    width: 300px;
-    height: 620px;
-    border: 3px solid white;
-    background: linear-gradient(to right, #060606, #060332);
-    border-radius: 10px;
 
-  } */
-
-  /* Progress.css */
-.line-1, .line-2, .line-3, .line-4 {
+.line-1,
+.line-2,
+.line-3,
+.line-4 {
   position: absolute;
   width: 99px;
   height: 0;
@@ -42,7 +25,17 @@
   border-radius: 10px;
 }
 
-.horizontal-line-1, .horizontal-line-2, .horizontal-line-3, .horizontal-line-4, .horizontal-line-5 ,.horizontal-line-6, .horizontal-line-7, .horizontal-line-8, .horizontal-line-9, .horizontal-line-10, .horizontal-line-11 {
+.horizontal-line-1,
+.horizontal-line-2,
+.horizontal-line-3,
+.horizontal-line-4,
+.horizontal-line-5,
+.horizontal-line-6,
+.horizontal-line-7,
+.horizontal-line-8,
+.horizontal-line-9,
+.horizontal-line-10,
+.horizontal-line-11 {
   position: absolute;
   width: 826px;
   height: 0;
@@ -85,7 +78,7 @@
   font-size: 16px;
   transition: transform 0.2s;
   border-radius: 34px;
-background: rgba(22, 0, 133, 0.62);
+  background: rgba(22, 0, 133, 0.62);
 }
 
 .step-button:hover {
@@ -117,29 +110,25 @@ background: rgba(22, 0, 133, 0.62);
 .horizontal-line-8,
 .horizontal-line-9,
 .horizontal-line-10,
-.horizontal-line-11
- {
+.horizontal-line-11 {
   position: absolute;
 
-    background-image: repeating-linear-gradient(
-    90deg, /* Angle of the gradient */
-    transparent, 
-    transparent 10px, 
-    #38B718 10px, 
-    #38B718 25px /* Adjust spacing for dashes */
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    #38b718 10px,
+    #38b718 25px
   );
 }
 
-/* Line Dimensions */
 .line-1 {
-width: 5px;
-height: 100px;
+  width: 5px;
+  height: 100px;
   left: 785px;
   top: 157px;
   transform: rotate(180deg);
   transform-origin: 0 0;
-  
-  
 }
 
 .line-2 {
@@ -169,21 +158,22 @@ height: 100px;
   transform-origin: 0 0;
 }
 
-.line-1, .line-2, .line-3, .line-4 {
+.line-1,
+.line-2,
+.line-3,
+.line-4 {
   position: absolute;
-  background-color: #000000; /* Fallback color */
+  background-color: #000000;
   transition: background-color 0.3s ease-in-out;
   background-image: repeating-linear-gradient(
     180deg,
     transparent,
     transparent 10px,
-    #38B718 10px,
-    #38B718 25px
+    #38b718 10px,
+    #38b718 25px
   );
 }
 
-
-/* Horizontal Lines */
 .horizontal-line-1 {
   height: 5px;
   width: 200px;
@@ -261,15 +251,15 @@ height: 100px;
   top: 136px;
 }
 
-.progress-circles{
+.progress-circles {
   position: relative;
 }
 
-.progressc1{
+.progressc1 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 155px;
   margin-bottom: 30px;
@@ -277,11 +267,11 @@ height: 100px;
   margin-top: 32px;
 }
 
-.progressc2{
+.progressc2 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 350px;
   margin-bottom: 30px;
@@ -289,11 +279,11 @@ height: 100px;
   margin-top: 32px;
 }
 
-.progressc3{
+.progressc3 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 560px;
   margin-bottom: 30px;
@@ -301,12 +291,11 @@ height: 100px;
   margin-top: 32px;
 }
 
-
-.progressc4{
+.progressc4 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 760px;
   margin-bottom: 30px;
@@ -314,11 +303,11 @@ height: 100px;
   margin-top: 82px;
 }
 
-.progressc5{
+.progressc5 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 680px;
   margin-bottom: 30px;
@@ -326,12 +315,11 @@ height: 100px;
   margin-top: 131px;
 }
 
-
-.progressc6{
+.progressc6 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 460px;
   margin-bottom: 30px;
@@ -339,11 +327,11 @@ height: 100px;
   margin-top: 131px;
 }
 
-.progressc7{
+.progressc7 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 155px;
   margin-bottom: 30px;
@@ -351,11 +339,11 @@ height: 100px;
   margin-top: 180px;
 }
 
-.progressc8{
+.progressc8 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 245px;
   margin-bottom: 30px;
@@ -363,11 +351,11 @@ height: 100px;
   margin-top: 230px;
 }
 
-.progressc9{
+.progressc9 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 460px;
   margin-bottom: 30px;
@@ -375,11 +363,11 @@ height: 100px;
   margin-top: 230px;
 }
 
-.progressc10{
+.progressc10 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 760px;
   margin-bottom: 30px;
@@ -387,55 +375,55 @@ height: 100px;
   margin-top: 280px;
 }
 
-.progressc11{
+.progressc11 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 680px;
   margin-bottom: 30px;
   z-index: 1000;
   margin-top: 332px;
 }
-.progressc12{
+.progressc12 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 460px;
   margin-bottom: 30px;
   z-index: 1000;
   margin-top: 332px;
 }
-.progressc13{
+.progressc13 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 154px;
   margin-bottom: 30px;
   z-index: 1000;
   margin-top: 382px;
 }
-.progressc14{
+.progressc14 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 245px;
   margin-bottom: 30px;
   z-index: 1000;
   margin-top: 431px;
 }
-.progressc15{
+.progressc15 {
   width: 30px;
   height: 30px;
-  background-color: #38B718;
-  position:absolute;
+  background-color: #38b718;
+  position: absolute;
   border-radius: 40px;
   margin-left: 460px;
   margin-bottom: 30px;
@@ -443,24 +431,20 @@ height: 100px;
   margin-top: 431px;
 }
 
-
-/* Filled State */
 .filled {
-  background-color: #38B718;
+  background-color: #38b718;
 }
 
-/* Details */
-.Progress-MainScreens{
-  background: linear-gradient(to right, #060606, #060332); 
+.Progress-MainScreens {
+  background: linear-gradient(to right, #060606, #060332);
 }
-.Construction-details{
+.Construction-details {
   margin-top: 10px;
   border: 0.5px solid black;
   margin-left: 310px;
   background-color: rgb(232, 236, 239);
   font-size: 20px;
   border-radius: 20px;
-  
 }
 
 .Construction-details p {
@@ -472,25 +456,22 @@ height: 100px;
   color: #060606;
 }
 
-
-/* Update pop up */
 .process-popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: rgba(0, 0, 0, 0.5);  */
   display: flex;
   justify-content: center;
   margin-left: 200px;
   color: #060606;
   align-items: center;
-  z-index: 1000; /* Ensure it's on top */
+  z-index: 1000;
 }
 
 .process-popup-message {
-  background: rgba(217, 217, 217, 0.50);
+  background: rgba(217, 217, 217, 0.5);
   backdrop-filter: blur(12.5px);
   border: 4px solid rgb(214, 16, 16);
   color: #060606;
