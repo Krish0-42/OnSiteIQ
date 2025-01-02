@@ -39,7 +39,8 @@ let otpStore = {};
 async function connectToDatabase() {
   try {
       await client.connect(); // Connect the client
-      console.log('Connected to MongoDB');
+      db = client.db("OnsiteIQ");
+      console.log('Connected to MongoDB 1');
   } catch (error) {
       console.error('Failed to connect to MongoDB:', error);
       process.exit(1); // Exit if connection fails
@@ -47,6 +48,20 @@ async function connectToDatabase() {
 }
 // Connect to the database when the server starts
 connectToDatabase();
+
+// Function to connect to MongoDB
+async function connectToDatabasee() {
+  try {
+      await client.connect(); // Connect the client
+      db = client.db("OnsiteIQSITE"); // Select the database
+      console.log("Connected to MongoDB 2");
+  } catch (error) {
+      console.error("Failed to connect to MongoDB:", error);
+      process.exit(1); // Exit if connection fails
+  }
+}
+connectToDatabasee()
+
 // Log environment variables for debugging
 console.log("EMAIL:", process.env.EMAIL);
 console.log("EMAIL_PASSWORD:", process.env.EMAIL_PASSWORD);
@@ -684,13 +699,20 @@ console.log("EMAIL_PASSWORD:", process.env.EMAIL_PASSWORD);
       // Map Data process...
         app.post("/add-marker", async (req, res) => {
           const { siteOwner, siteManager, siteStartDate, managerPhone, groundWidth, groundHeight, latitude, longitude } = req.body;
-
+        
+          console.log("Received request body:", req.body);
+          const db =client.db("OnsiteIQ")
+        
+          // Validation
           if (!latitude || !longitude) {
               return res.status(400).json({ message: "Latitude and longitude are required." });
           }
-
+        
+          if (!siteOwner || !siteManager || !siteStartDate || !managerPhone || !groundWidth || !groundHeight) {
+              return res.status(400).json({ message: "All fields are required." });
+          }
+        
           try {
-              // Save marker data to the database
               const newMarker = {
                   siteOwner,
                   siteManager,
@@ -701,16 +723,20 @@ console.log("EMAIL_PASSWORD:", process.env.EMAIL_PASSWORD);
                   latitude,
                   longitude,
               };
-
-              // Example: Insert the marker into a MongoDB collection
-              const db = client.db("OnsiteIQ");
+        
+              // Ensure db is connected before proceeding with operations
+              if (!db) {
+                  return res.status(500).json({ message: "Database connection not established." });
+              }
+        
               const collectionName = "Map-Data";
               const result = await db.collection(collectionName).insertOne(newMarker);
-
+        
+              console.log("Inserted marker with ID:", result.insertedId);
               res.status(200).json({ message: "Marker added successfully", markerId: result.insertedId });
           } catch (error) {
-              console.error("Error saving marker:", error);
-              res.status(500).json({ message: "Error saving marker" });
+              console.error("Error saving marker:", error.message);
+              res.status(500).json({ message: "Error saving marker", error: error.message });
           }
         });
 
